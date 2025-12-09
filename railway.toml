@@ -1,9 +1,11 @@
 [build]
 builder = "NIXPACKS"
 
-[deploy]
-start = "gunicorn palm_diagnosis.wsgi --timeout 200"
+[install]
+apt = ["python3.10", "python3.10-venv"]
 
-[vars]
+[variables]
 PYTHON_VERSION = "3.10"
 
+[deploy]
+start = "gunicorn palm_diagnosis.wsgi --timeout 200"
