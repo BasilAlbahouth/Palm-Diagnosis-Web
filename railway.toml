@@ -1,1 +1,9 @@
+[build]
+builder = "NIXPACKS"
+
+[deploy]
+start = "gunicorn palm_diagnosis.wsgi --timeout 200"
+
+[vars]
+PYTHON_VERSION = "3.10"
 
