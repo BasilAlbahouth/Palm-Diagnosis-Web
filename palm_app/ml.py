@@ -1,7 +1,10 @@
 import numpy as np
 from PIL import Image
-import tensorflow as tf
-tflite = tf.lite
+try:
+    import tflite_runtime.interpreter as tflite
+except ImportError:
+    import tensorflow as tf
+    tflite = tf.lite
 
 import tempfile
 import requests
