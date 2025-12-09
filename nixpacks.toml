@@ -1,16 +1,24 @@
 [build]
-# نُجبر Nixpacks يستخدم Python 3.10
-runtime = "python@3.10"
-
-[phases.setup]
+# نختار بايثون 3.10 بشكل صريح
 nixpkgs = ["python310", "gcc"]
 
+[phases.setup]
+commands = [
+  "echo using python",
+  "python3.10 --version"
+]
+
 [phases.install]
-cmds = [
-    "python3.10 -m venv /opt/venv",
-    ". /opt/venv/bin/activate",
-    "pip install --upgrade pip",
-    "pip install -r requirements.txt"
+commands = [
+  "python3.10 -m venv /opt/venv",
+  ". /opt/venv/bin/activate",
+  "pip install --upgrade pip",
+  "pip install -r requirements.txt"
+]
+
+[phases.build]
+commands = [
+  "python3.10 -m pip install -r requirements.txt"
 ]
 
 [start]
