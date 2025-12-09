@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: palm-diagnosis
+    env: python
+    plan: free
+    region: oregon
+    buildCommand: "pip install --upgrade pip && pip install -r requirements.txt"
+    startCommand: "gunicorn palm_diagnosis.wsgi --timeout 200"
+    envVars:
+      PYTHON_VERSION: "3.12"
