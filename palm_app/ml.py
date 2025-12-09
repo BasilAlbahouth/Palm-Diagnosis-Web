@@ -1,6 +1,8 @@
 import numpy as np
 from PIL import Image
 import tensorflow as tf
+tflite = tf.lite
+
 import tempfile
 import requests
 from django.conf import settings
