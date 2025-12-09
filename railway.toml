@@ -1,9 +1,0 @@
-[build]
-builder = "NIXPACKS"
-buildCommand = "python3.10 -m pip install -r requirements.txt"
-
-[deploy]
-startCommand = "gunicorn palm_diagnosis.wsgi --timeout 200"
-
-[variables]
-PYTHON_VERSION = "3.10"

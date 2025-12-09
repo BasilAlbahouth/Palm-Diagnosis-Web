@@ -1,1 +1,1 @@
-web: gunicorn palm_diagnosis.wsgi --timeout 200
+web: gunicorn palm_diagnosis.wsgi --timeout 200 --log-file -
