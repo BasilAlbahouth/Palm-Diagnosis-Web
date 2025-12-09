@@ -1,0 +1,17 @@
+[build]
+# نُجبر Nixpacks يستخدم Python 3.10
+runtime = "python@3.10"
+
+[phases.setup]
+nixpkgs = ["python310", "gcc"]
+
+[phases.install]
+cmds = [
+    "python3.10 -m venv /opt/venv",
+    ". /opt/venv/bin/activate",
+    "pip install --upgrade pip",
+    "pip install -r requirements.txt"
+]
+
+[start]
+cmd = "gunicorn palm_diagnosis.wsgi --timeout 200"
