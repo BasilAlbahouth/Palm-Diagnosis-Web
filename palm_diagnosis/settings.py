@@ -35,13 +35,15 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',   # يجب يكون هنا
+    'whitenoise.middleware.WhiteNoiseMiddleware',   # << أضفه هنا
+    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',  # لازم بعد سيشن
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 
 ROOT_URLCONF = 'palm_diagnosis.urls'
@@ -145,5 +147,8 @@ PALM_CLASS_NAMES = [
     'مرض_الحروق_السوداء',
 ]
 PALM_TOP_K = 6
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 
 
