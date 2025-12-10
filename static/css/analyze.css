@@ -28,7 +28,7 @@ body {
 .page-bg {
     position: fixed;
     inset: 0;
-    background-image: url('background.png');
+    background-image: url("../images/background.png");
     background-size: cover;
     background-position: center;
     filter: brightness(0.55);
